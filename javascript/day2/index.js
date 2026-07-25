@@ -46,15 +46,34 @@
 // b). string
 // let name = "vishal"
 // c). boolean(true false)
+// let isLogin = true;
+// let isAdmin = false;
+// console.log(isAdmin);
+// console.log(isLogin);
+
 // d). null
+// let name = null
+// console.log(name);
+// console.log(typeof name);
+
 // let data = null;
 // e). undefiend
-// f). symbol
+// let a;
+// console.log(a);
+// console.log(typeof a);
+
+
+// f). symbol (unique value)
+// let name1 = Symbol("vishal")
+// let name2 = Symbol("vishal")
+// console.log(name1 === name2);
+
 // g). bigint
 // let num = 12345678907897n
+// let n = 899999999999999999999999999999999999999n;
 
 // 2) --------- non premtive dataType
-// a) Array b) object 
+// a) Array b) object
 
 // let arr = [1, 2, 3, 4, 5, 6, "vishal", true, null, undefined,]
 
@@ -69,7 +88,7 @@
 // ------------- naming convesion------------
 // camel case -
 // const myName = "vishal"
-// snake case - 
+// snake case -
 // const my_name  = "vishal"
 
 // let name = "vishal"
