@@ -96,7 +96,7 @@
 
 
 // Q. let arr = [2, 4, 6, 7, 2, 7, 6] sum of all number?
-// Q let name = "vishal" reverse staring
+// Q let name = "vishal" reverse string
 
 
 
