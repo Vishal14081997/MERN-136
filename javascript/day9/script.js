@@ -39,46 +39,52 @@
 //         break;
 // }
 
+// let month = prompt("enter your month");
+// month = Number(month)
 
-let month = 13;
+// switch (month) {
+//     case 12:
+//     case 13:
+//     case 14:
+//         console.log("December");
+//         break;
+//     case 1:
+//         console.log("January");
+//         break;
+//     case 2:
+//         console.log("February");
+//         break;
+//     case 3:
+//         console.log("March");
+//         break;
+//     case 4:
+//         console.log("April");
+//         break;
+//     case 5:
+//         console.log("May");
+//         break;
+//     case 6:
+//         console.log("June");
+//         break;
+//     case 7:
+//         console.log("July");
+//         break;
+//     case 8:
+//         console.log("August");
+//         break;
+//     case 9:
+//         console.log("September");
+//         break;
+//     case 10:
+//         console.log("October");
+//         break;
+//     case 11:
+//         console.log("November");
+//         break;
+//     default:
+//         console.log("Invalid month");
+// }
 
-switch (month) {
-    case 1 ,13:
-        console.log("January");
-        break;
-    case 2:
-        console.log("February");
-        break;
-    case 3:
-        console.log("March");
-        break;
-    case 4:
-        console.log("April");
-        break;
-    case 5:
-        console.log("May");
-        break;
-    case 6:
-        console.log("June");
-        break;
-    case 7:
-        console.log("July");
-        break;
-    case 8:
-        console.log("August");
-        break;
-    case 9:
-        console.log("September");
-        break;
-    case 10:
-        console.log("October");
-        break;
-    case 11:
-        console.log("November");
-        break;
-    case 12:
-        console.log("December");
-        break;
-    default:
-        console.log("Invalid month");
-}
+// apple , banana , orange -> fruits 
+// potato -> vegetables 
+
