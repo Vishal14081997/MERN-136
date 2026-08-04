@@ -112,4 +112,42 @@
 // let arr3 = [...arr2 , "vishal",...arr1]
 // console.log(arr3);
 
+// let arr = [1,2,3]
+// let copy = [...arr]
+// copy.push(4)
+// console.log(copy);
+
+// let obj1 = {
+//     firstName:"vishal",
+//     lastName:"singh"
+// }
+// let obj2 = {
+//     gender:"Male",
+//     age:30,
+//     firstName:"rekha",
+// }
+// let obj3 = {...obj2, ...obj1 , firstName:"raj"}
+// console.log(obj3);
+
+
+// object destructuring 
+
+// let obj = {
+//     firstName:"vishal",
+//     gender: "Male",
+//     age: 30
+// }
+// let {age ,firstName} = obj;
+// console.log(firstName);
+
+
+//-------rest operator-------
+
+// let arr = [10,20,30,40]
+
+// let [firstValue , secondValue, ...rest] = arr;
+// console.log(secondValue);
+// console.log(rest);
+
+
 
