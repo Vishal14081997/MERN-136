@@ -84,6 +84,20 @@
 // let newStr = str.replaceAll("vishal", "mukesh")
 // console.log(newStr);
 
+// let str = "5"
+// let newStr = str.padStart(3, "0")
+// let newStr = str.padEnd(3, "0")
+// console.log(newStr);
+
+
+// let str = "Hello, My name is vishal singh";
+// let result = str.includes("vishal singh")
+// console.log(result);
+
+
+// let date = "10-02-2026"
+// let newDate = date.replaceAll("-", "/")
+// console.log(newDate);
 
 
 
