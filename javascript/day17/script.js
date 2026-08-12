@@ -54,4 +54,18 @@
 // let result = 1000 + Math.floor(number * 9000)  // 1000  - 9999
 // console.log(result);
 
+// 2nd
 
+// function generateOtp() {
+
+//     console.log("otp generated");
+
+//     let otp = Math.floor(Math.random() * 10000)
+
+//     if (otp < 1000) {
+//         generateOtp() // recursive function
+//     } else {
+//         console.log(otp);
+//     }
+// }
+// generateOtp()
