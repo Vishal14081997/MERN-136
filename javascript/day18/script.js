@@ -19,7 +19,6 @@
 // console.log(typeof newStr, newStr);
 
 
-
 // let firtVar = 10;
 // let firtVar = -10;
 // let firtVar = true;
