@@ -63,3 +63,11 @@
 // },5000)
 
 // Q run my interval only for 10 second then stop it ?
+
+// const interval = setInterval(() => {
+//     let random = Math.random()
+//     console.log(random);
+// }, 2000)
+// setTimeout(() => {
+//     clearInterval(interval)
+// }, 11000)
