@@ -89,3 +89,62 @@ let jsonData = {
 //     }, 3000)
 // }
 // getProfileDetail("vishal@1408");
+
+// 4th -------------
+
+function getUserDetail(callback) {
+    setTimeout(() => {
+        let filterData = jsonData.users.map((item) => {
+            let newObj = {}
+            newObj.name = item.name;
+            newObj.userName = item.userName
+            return newObj;
+        })
+        // console.log(filterData);
+        callback(filterData)
+    }, 3000)
+}
+
+function getProfileDetail(user, callback) {
+    setTimeout(() => {
+        let profileData = jsonData.users.filter((item)=>{
+            return item.userName === user   
+        })
+        // console.log(profileData[0].profile);
+        callback(profileData[0].profile)
+    },1000)
+}
+function getPostDetails(user , callback){
+    setTimeout(()=>{
+        let postData = jsonData.users.filter((item)=>{
+            return item.userName === user
+        })
+        // console.log(postData[0].posts);
+        callback(postData[0].posts)
+        
+    },2000)
+}
+
+getUserDetail((data) => {
+    console.log(data);
+    data.forEach((element) => {
+        console.log("user details: ", element);
+        getProfileDetail(element.userName ,(profile)=>{
+            console.log(`profile for ${element.name}`, profile); 
+        });
+        getPostDetails(element.userName,(post)=>{
+            console.log(`post for ${element.name}` ,post);
+        }) 
+    })
+})
+
+// callback hell 
+
+// callback -> Promise -> async / await
+
+// problem with callback hell :- 
+
+// code become difficult to read
+// error handling difficult
+// too much nesting makes the code complex
+// debugging become difficult
