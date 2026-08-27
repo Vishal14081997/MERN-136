@@ -50,11 +50,30 @@ body {
     padding: 5px;
     cursor: pointer;
 }
-#middle {
-  background-color: rgb(55, 64, 64);
+#middle { 
   height: 45%;
+  display: flex;
+  justify-content: space-around;
+  font-weight: 500;
+  align-items: center;
+  color: white;
 }
+#city-name{
+  font-size: 50px;
+}
+#current-date{
+  font-size: 20px;
+}
+#current-temp{
+  font-size: 50px;
+}
+#min-max-temp{
+  font-size: 30px;
+}
+
+
 #lower {
   background-color: rgb(168, 151, 21);
   height: 45%;
 }
+
