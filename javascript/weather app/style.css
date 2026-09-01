@@ -58,6 +58,12 @@ body {
   align-items: center;
   color: white;
 }
+#weather-image{
+ margin-top: 10px;
+}
+#left{
+  text-align: center;
+}
 #city-name{
   font-size: 50px;
 }
@@ -73,7 +79,18 @@ body {
 
 
 #lower {
-  background-color: rgb(168, 151, 21);
   height: 45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+#inner{
+  width: 90%;
+  display: flex;
+  gap: 20px;
+  color: white;
+  overflow: auto;
+  scrollbar-width: none;
+
+}
