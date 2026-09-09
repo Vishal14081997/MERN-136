@@ -102,14 +102,20 @@
 
 // -------------- 2nd -------------------------
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Button from "@mui/material/Button"
 
 const App = () => {
   const [count, setCount] = useState(0);
+
   const handleIncrement = () => {
     setCount(count + 1)
   }
+
+  useEffect(() => {
+    console.log("count updated", count);
+  }, [count]) // dependency
+
   return (
     <>
       <div>
@@ -121,3 +127,17 @@ const App = () => {
 }
 
 export default App
+
+
+// useEffect : -  useEffect ek react ka hook h jo component ke render hone ke baad side effects perform karna ke liye use hota hai , jaise api call , event listener ,ya state ke chnage hone par code chalna . 
+
+// state : - 
+// const [count , setCount]  = useState(0)
+// count - current state vlaue
+// setCount - state ko change karne ka function 
+// 0 - initial value
+
+// state components ke ander ek aisi value/ data  hai jo time saath change ho sakti hai . jab state change hoti hais . react components ko dobara render  karta hai.
+
+// useState  : - ek react hook hai jo function component ke ander state ko create or mange karne ka k liye use hota hai
+
