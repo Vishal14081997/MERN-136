@@ -90,7 +90,6 @@
 //         {isLoggedIn ? "Logout" : "Login"}
 //       </button>
 
-
 //     </div>
 //   );
 // };
@@ -99,26 +98,94 @@
 
 //--------------- 3rd ----------------------------
 
-import React, { useState } from 'react'
+// import React, { useState } from "react";
 
-const App = () => {
-  const [firstname, setFirstName] = useState("")
-  const handleChange = (e) => {
-    console.log(e.target.value);
-    setFirstName(e.target.value)
-  }
-  return (
-    <div>
-      <form action="">
-        <h2>Registration form</h2>
-        <label htmlFor="Firstname">Firstname</label>
-        <input id='Firstname' type="text" placeholder='Firstname' onChange={handleChange} />
-      </form>
-      <div>
-        <div>FirstName: {firstname}</div>
-      </div>
-    </div>
-  )
-}
+// const App = () => {
+//   const [formData, setFormData] = useState({
+//     firstname: "", lastname: "", email: "", password: ""
+//   })
+//   const [isSubmited, setIsSubmited] = useState(false)
 
-export default App
+//   const handleSubmit = (e) => {
+//     e.preventDefault();
+//     setIsSubmited(true)
+//   }
+//   const handleChange = (e) => {
+//     // console.log(e.target.name);
+//     // console.log(e.target.value);
+//     setFormData({ ...formData, [e.target.name]: e.target.value })
+
+//   }
+//   console.log(formData);
+//   return (
+//     <div className="flex justify-center gap-20 items-center h-screen">
+
+//       <form onSubmit={handleSubmit} className="p-8 border border-gray-400">
+//         <h2 className="font-bold text-2xl">Registration form</h2>
+//         <div className="flex flex-col ">
+//           <div className="border border-gray-200 mt-4 rounded-[8px]">
+//             <input
+//               onChange={handleChange}
+//               name="firstname"
+//               value={formData.firstname}
+//               type="text"
+//               placeholder="Firstname"
+//               className="outline-none p-2 "
+//             />
+//           </div>
+//           <div className="border border-gray-200 mt-4 rounded-[8px]">
+//             <input
+//               onChange={handleChange}
+//               name="lastname"
+//               value={formData.lastname}
+//               type="text"
+//               placeholder="Lastname"
+//               className="outline-none p-2 "
+//             />
+//           </div>
+//           <div className="border border-gray-200 mt-4 rounded-[8px]">
+//             <input
+//               onChange={handleChange}
+//               name="email"
+//               value={formData.email}
+//               type="email"
+//               placeholder="email"
+//               className="outline-none p-2 "
+//             />
+//           </div>
+//           <div className="border border-gray-200 mt-4 rounded-[8px]">
+//             <input
+//               onChange={handleChange}
+//               name="password"
+//               value={formData.password}
+//               type="password"
+//               placeholder="password"
+//               className="outline-none p-2 "
+//             />
+//           </div>
+
+//         </div>
+//         <div className="text-center mt-4 font-semibold bg-blue-600 p-2 text-white">
+//           <button type="submit" className="">Submit</button>
+//         </div>
+//       </form>
+
+//       <div>
+//         {
+//           isSubmited &&
+//           <div className="p-4 border border-gray-200">
+//             <h1>submit data</h1>
+//             <div>
+//               <p>FirstName: {formData.firstname}</p>
+//               <p>LastName: {formData.lastname}</p>
+//               <p>Email: {formData.email}</p>
+//               <p>Password: {formData.password}</p>
+//             </div>
+//           </div>
+//         }
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default App;
