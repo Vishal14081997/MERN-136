@@ -189,3 +189,55 @@
 // };
 
 // export default App;
+
+
+// ----------------- 4th --------------------------
+
+import React, { useState } from 'react'
+
+const App = () => {
+    const [step, setStep] = useState(1);
+    const handleStepIncrease = () => {
+        setStep(step + 1)
+    }
+    const handlePreviousClick = () => {
+        setStep(step - 1)
+    }
+    return (
+        <>
+            <div>
+                <h3 style={{ color: step === 1 ? "green" : "black" }}>Name</h3>
+                <h3 style={{ color: step === 2 ? "green" : "black" }}>password details</h3>
+                <h3 style={{ color: step === 3 ? "green" : "black" }}>upload markSheet</h3>
+            </div>
+            {
+                step === 1 && (
+                    <div className='border border-gray-300 inline-block rounded-2xl px-2 mt-10 ml-10'>
+                        <input type="text" placeholder='enter your name' />
+
+                    </div>
+                )
+            }
+            {
+                step === 2 && (
+                    <div className='border border-gray-300 inline-block rounded-2xl px-2 mt-10 ml-10'>
+                        <input className='outline-none' type="text" placeholder='enter your password' />
+                    </div>
+                )
+            }
+            {
+                step === 3 && (
+                    <div >
+                        <label htmlFor="">Upload markSheet</label>
+                        <input type="file" />
+                    </div>
+                )
+            }
+            <button className='bg-blue-600 rounded-2xl px-4 py-1 text-white ' onClick={handleStepIncrease}>Next</button>
+            <button className='bg-blue-600 rounded-2xl px-4 py-1 text-white ' onClick={handlePreviousClick}>Previous</button>
+        </>
+    )
+}
+
+export default App
+
