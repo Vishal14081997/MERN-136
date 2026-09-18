@@ -13,5 +13,4 @@ const CounterContext = ({ children }) => {
         </div>
     )
 }
-
-export default CounterContext
+export default CounterContext;

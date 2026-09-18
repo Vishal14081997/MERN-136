@@ -26,11 +26,15 @@
 import React from 'react'
 import Home from './Home'
 import CounterContext from './context/CounterContext'
+import TheamContext from './context/TheamContext'
+import Navbar from './Navbar'
 
 const App = () => {
   return (
     <CounterContext>
-      <Home />
+      <TheamContext>
+        <Home />
+      </TheamContext>
     </CounterContext>
   )
 }
