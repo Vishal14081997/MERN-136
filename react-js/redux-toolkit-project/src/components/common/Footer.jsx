@@ -2,7 +2,6 @@ import React from 'react'
 
 const Footer = () => {
   return (
-<<<<<<< HEAD
     <footer className="bg-neutral-primary-soft">
       <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div className="md:flex md:justify-between">
@@ -175,9 +174,6 @@ const Footer = () => {
       </div>
     </footer>
 
-=======
-    <div>Footer</div>
->>>>>>> 779004c8e6c3b5344fc8d103e9c9b5e4380caf94
   )
 }
 
