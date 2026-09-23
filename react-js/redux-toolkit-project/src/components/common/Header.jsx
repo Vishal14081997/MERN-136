@@ -1,4 +1,5 @@
 import React from 'react'
+<<<<<<< HEAD
 import { useSelector } from 'react-redux'
 
 const Header = () => {
@@ -41,6 +42,12 @@ const Header = () => {
       </header>
 
     </div>
+=======
+
+const Header = () => {
+  return (
+    <div>Header</div>
+>>>>>>> 779004c8e6c3b5344fc8d103e9c9b5e4380caf94
   )
 }
 
