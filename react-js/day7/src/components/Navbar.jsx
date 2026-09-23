@@ -21,7 +21,9 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className='flex gap-2 font-semibold '>
+                <Link to={"/login"}>
                 <div className='cursor-pointer'>Login</div>
+                </Link>
                 <div className='cursor-pointer'>Signup</div>
             </div>
 
