@@ -1,8 +1,9 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
+import { Link } from 'react-router-dom';
 
 const Header = () => {
-  let myData = useSelector((myStore) => myStore.counterStore.count)
+  let myData = useSelector((myStore) => myStore.counterStore.count) // store s data lane ka kam krta hai useSelector hook
   console.log(myData);
   return (
     <div>
@@ -15,18 +16,22 @@ const Header = () => {
             >
             </a>
             <div className="flex items-center space-x-6 rtl:space-x-reverse">
-              <a
-                href="#"
-                className="text-sm font-medium text-fg-brand hover:underline"
-              >
-                Home
-              </a>
-              <a
-                href="#"
-                className="text-sm font-medium text-fg-brand hover:underline"
-              >
-                Cart
-              </a>
+              <Link to={"/"}>
+                <a
+                  href="#"
+                  className="text-sm font-medium text-fg-brand hover:underline"
+                >
+                  Home
+                </a>
+              </Link>
+              <Link to={"/cart"}>
+                <a
+                  href="#"
+                  className="text-sm font-medium text-fg-brand hover:underline"
+                >
+                  Cart
+                </a>
+              </Link>
               <a
                 href="#"
                 className="text-sm font-medium text-fg-brand hover:underline"
