@@ -4,7 +4,11 @@ import { Link } from 'react-router-dom';
 
 const Header = () => {
   let myData = useSelector((myStore) => myStore.counterStore.count) // store s data lane ka kam krta hai useSelector hook
-  console.log(myData);
+  // console.log(myData);
+  let myStore = useSelector((myStore) => myStore.cartStore.cart)
+  console.log(myStore);
+  
+
   return (
     <div>
       <header className=" w-full z-20 top-0 start-0">
@@ -29,7 +33,7 @@ const Header = () => {
                   href="#"
                   className="text-sm font-medium text-fg-brand hover:underline"
                 >
-                  Cart
+                  Cart({myStore.length})
                 </a>
               </Link>
               <a
