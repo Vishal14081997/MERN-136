@@ -1,6 +1,29 @@
 import React from 'react'
+import { useDispatch } from 'react-redux'
+import { changeQty, deleteCart } from '../redux/cartSlice'
 
-const CartRow = () => {
+const CartRow = ({ data }) => {
+    console.log(data);
+    const dispatch = useDispatch()
+
+    const removeCartItem = () => {
+        dispatch(deleteCart(data.id))
+    }
+    const updateQty = (type) => {
+        console.log(data.qty);
+        
+        let qty = data.qty;
+        let finalQty = qty;
+        if (type == "+") {
+            finalQty++
+        } else {
+            if(qty>1){
+                finalQty--
+            }
+        }
+        // console.log(finalQty);
+        dispatch(changeQty({id:data.id , finalQty}))
+    }
     return (
         <div>
             <div className="space-y-6">
@@ -9,12 +32,12 @@ const CartRow = () => {
                         <a href="#" className="shrink-0 md:order-1">
                             <img
                                 className="h-20 w-20 dark:hidden"
-                                src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/imac-front.svg"
+                                src={data.image}
                                 alt="imac image"
                             />
                             <img
                                 className="hidden h-20 w-20 dark:block"
-                                src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/imac-front-dark.svg"
+                                src={data.image}
                                 alt="imac image"
                             />
                         </a>
@@ -24,26 +47,13 @@ const CartRow = () => {
                         <div className="flex items-center justify-between md:order-3 md:justify-end">
                             <div className="flex items-center">
                                 <button
+                                    onClick={() => updateQty("-")}
                                     type="button"
                                     id="decrement-button"
                                     data-input-counter-decrement="counter-input"
                                     className="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-md border border-gray-300 bg-gray-100 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-100 dark:border-gray-600 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700"
                                 >
-                                    <svg
-                                        className="h-2.5 w-2.5 text-gray-900 dark:text-white"
-                                        aria-hidden="true"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        fill="none"
-                                        viewBox="0 0 18 2"
-                                    >
-                                        <path
-                                            stroke="currentColor"
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            strokeWidth={2}
-                                            d="M1 1h16"
-                                        />
-                                    </svg>
+                                    <p className='text-white'>-</p>
                                 </button>
                                 <input
                                     type="text"
@@ -51,35 +61,22 @@ const CartRow = () => {
                                     data-input-counter=""
                                     className="w-10 shrink-0 border-0 bg-transparent text-center text-sm font-medium text-gray-900 focus:outline-none focus:ring-0 dark:text-white"
                                     placeholder=""
-                                    defaultValue={2}
+                                    value={data.qty}
                                     required=""
                                 />
                                 <button
+                                    onClick={() => updateQty("+")}
                                     type="button"
                                     id="increment-button"
                                     data-input-counter-increment="counter-input"
                                     className="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-md border border-gray-300 bg-gray-100 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-100 dark:border-gray-600 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700"
                                 >
-                                    <svg
-                                        className="h-2.5 w-2.5 text-gray-900 dark:text-white"
-                                        aria-hidden="true"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        fill="none"
-                                        viewBox="0 0 18 18"
-                                    >
-                                        <path
-                                            stroke="currentColor"
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            strokeWidth={2}
-                                            d="M9 1v16M1 9h16"
-                                        />
-                                    </svg>
+                                    <p className='text-white'>+</p>
                                 </button>
                             </div>
                             <div className="text-end md:order-4 md:w-32">
                                 <p className="text-base font-bold text-gray-900 dark:text-white">
-                                    $1,499
+                                    ${data.price*data.qty}
                                 </p>
                             </div>
                         </div>
@@ -88,9 +85,7 @@ const CartRow = () => {
                                 href="#"
                                 className="text-base font-medium text-gray-900 hover:underline dark:text-white"
                             >
-                                PC system All in One APPLE iMac (2023) mqrq3ro/a, Apple M3,
-                                24" Retina 4.5K, 8GB, SSD 256GB, 10-core GPU, Keyboard layout
-                                INT
+                                {data.title}
                             </a>
                             <div className="flex items-center gap-4">
                                 <button
@@ -118,6 +113,7 @@ const CartRow = () => {
                                 </button>
                                 <button
                                     type="button"
+                                    onClick={removeCartItem}
                                     className="inline-flex items-center text-sm font-medium text-red-600 hover:underline dark:text-red-500"
                                 >
                                     <svg

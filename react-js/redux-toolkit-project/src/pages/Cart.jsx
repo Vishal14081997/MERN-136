@@ -1,7 +1,13 @@
 import React from 'react'
 import CartRow from '../components/CartRow'
+import { useSelector } from 'react-redux'
 
 const Cart = () => {
+  const cart = useSelector((myStore) => myStore.cartStore.cart)
+  // console.log(cart);
+
+  let total = cart.reduce((acc, curr) => acc+ curr.qty * curr.price, 0)
+
   return (
     <div>
       <section className="bg-white py-8 antialiased dark:bg-gray-900 md:py-16">
@@ -11,8 +17,13 @@ const Cart = () => {
           </h2>
           <div className="mt-6 sm:mt-8 md:gap-6 lg:flex lg:items-start xl:gap-8">
             <div className="mx-auto w-full flex-none lg:max-w-2xl xl:max-w-4xl">
-
-              <CartRow />
+              {
+                cart.map((item, index) => {
+                  return (
+                    <CartRow data={item} key={index} />
+                  )
+                })
+              }
 
             </div>
             <div className="mx-auto mt-6 max-w-4xl flex-1 space-y-6 lg:mt-0 lg:w-full">
@@ -27,31 +38,17 @@ const Cart = () => {
                         Original price
                       </dt>
                       <dd className="text-base font-medium text-gray-900 dark:text-white">
-                        $7,592.00
+                        ${Math.round(total)}
                       </dd>
                     </dl>
-                    <dl className="flex items-center justify-between gap-4">
-                      <dt className="text-base font-normal text-gray-500 dark:text-gray-400">
-                        Savings
-                      </dt>
-                      <dd className="text-base font-medium text-green-600">
-                        -$299.00
-                      </dd>
-                    </dl>
-                    <dl className="flex items-center justify-between gap-4">
-                      <dt className="text-base font-normal text-gray-500 dark:text-gray-400">
-                        Store Pickup
-                      </dt>
-                      <dd className="text-base font-medium text-gray-900 dark:text-white">
-                        $99
-                      </dd>
-                    </dl>
+
+
                     <dl className="flex items-center justify-between gap-4">
                       <dt className="text-base font-normal text-gray-500 dark:text-gray-400">
                         Tax
                       </dt>
                       <dd className="text-base font-medium text-gray-900 dark:text-white">
-                        $799
+                        $100
                       </dd>
                     </dl>
                   </div>
@@ -60,7 +57,7 @@ const Cart = () => {
                       Total
                     </dt>
                     <dd className="text-base font-bold text-gray-900 dark:text-white">
-                      $8,191.00
+                      ${Math.round(total) + 100}
                     </dd>
                   </dl>
                 </div>

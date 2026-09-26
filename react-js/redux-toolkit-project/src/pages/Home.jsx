@@ -3,6 +3,8 @@ import { useDispatch } from "react-redux";
 import { decrement, increment } from "../redux/counterSlice";
 import ProductCard from "../components/ProductCard";
 import axios from "axios"
+  import { ToastContainer } from 'react-toastify';
+
 
 const Home = () => {
   let dispatch = useDispatch(); // reducer k ander jo bhi function/action ko call krta hai
@@ -48,6 +50,7 @@ const Home = () => {
           })
         }
       </div>
+      <ToastContainer/>
     </div>
   );
 };

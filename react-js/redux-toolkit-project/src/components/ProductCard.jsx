@@ -3,20 +3,21 @@ import { useDispatch, useSelector } from "react-redux"
 import { addTocart, deleteCart } from '../redux/cartSlice';
 import Swal from 'sweetalert2/dist/sweetalert2.js'
 import 'sweetalert2/src/sweetalert2.scss'
+import { toast } from 'react-toastify';
 
 const ProductCard = ({ data }) => {
-
     const dispatch = useDispatch()
 
-    const { title, thumbnail, price, id, description } = data;
+    const { title, thumbnail, price ,id, description } = data;
 
     let cart = useSelector((myStore) => myStore.cartStore.cart);
     let checkItemInCart = cart.find((obj) => obj.id == id)
 
     const addToCartItem = () => {
-        let cartObj = { id, title, price, image: thumbnail }
+        let cartObj = { id, title, price, qty:1, image: thumbnail }
         console.log(cartObj);
         dispatch(addTocart({ cartObj }))
+        toast.success("Item Added In Cart")
     }
 
     const removeCartItem = () => {
@@ -31,11 +32,12 @@ const ProductCard = ({ data }) => {
         }).then((result) => {
             if (result.isConfirmed) {
                 dispatch(deleteCart(id))
-            } Swal.fire({
-                title: "Deleted!",
-                text: "Your file has been deleted.",
-                icon: "success"
-            });
+                Swal.fire({
+                    title: "Deleted!",
+                    text: "Your file has been deleted.",
+                    icon: "success"
+                });
+            }
         });
     }
 
